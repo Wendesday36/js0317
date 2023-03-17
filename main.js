@@ -63,3 +63,6 @@ function visszaFordit() {
     KIVALASZTOTTKEPEK.pop();
   }, 1000);
 }
+function osszeKever(){
+    /**osszekevrnmi a listat */
+}
