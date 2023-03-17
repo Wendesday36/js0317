@@ -15,6 +15,8 @@ const LIST = [
   "kepek/kep5.jpg",
   "kepek/kep6.jpg",
 ];
+const db = 0
+const KIVALASZTOTTKEPEK = 
 $(function () {
   /**console.log("barmi") Selection.append('')*/
   const FELSOELEM = $("#felso");
@@ -23,13 +25,23 @@ $(function () {
   /**kiskepekre kattintas */
   //fogd meg a kskepeket,adj hozza esemeny kezelot
   const FELSOKEPEK = $("#felso img");
+ 
 
   FELSOKEPEK.on("click", kepreKattintas);
 });
 function kepreKattintas(event) {
   const aktualisKep = event.target;
-  console.log(aktualisKep.id);
+  console.log (aktualisKep.id)
+  console.log($(aktualisKep).attr("id"));
   aktualisKep.src = LIST[aktualisKep.id];
+  KIVALASZTOTTKEPEK.push($(aktualisKep).attr("id"))
+  db++;
+  if (db == 0) {
+    db = 0;
+    visszaFordit();
+    KIVALASZTOTTKEPEK.pop
+    KIVALASZTOTTKEPEK.pop
+}
 }
 function osszeAllit() { 
   let txt = "";
@@ -38,4 +50,9 @@ function osszeAllit() {
   }
   console.log(txt);
   return txt;
+}
+function visszaFordit(){
+    console.log(KIVALASZTOTTKEPEK)
+    
+    aktualisKep,src = "kepek/hatter.jpg"
 }
