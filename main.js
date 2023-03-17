@@ -8,6 +8,12 @@ const LIST = [
   "kepek/kep4.jpg",
   "kepek/kep5.jpg",
   "kepek/kep6.jpg",
+  "kepek/kep1.jpg",
+  "kepek/kep2.jpg",
+  "kepek/kep3.jpg",
+  "kepek/kep4.jpg",
+  "kepek/kep5.jpg",
+  "kepek/kep6.jpg",
 ];
 $(function () {
   /**console.log("barmi") Selection.append('')*/
@@ -17,16 +23,18 @@ $(function () {
   /**kiskepekre kattintas */
   //fogd meg a kskepeket,adj hozza esemeny kezelot
   const FELSOKEPEK = $("#felso img");
+
   FELSOKEPEK.on("click", kepreKattintas);
 });
 function kepreKattintas(event) {
-  const aktKep = event.target;
-  console.log(aktKep.id);
+  const aktualisKep = event.target;
+  console.log(aktualisKep.id);
+  aktualisKep.src = LIST[aktualisKep.id];
 }
-function osszeAllit() {
+function osszeAllit() { 
   let txt = "";
   for (let index = 0; index < LIST.length; index++) {
-    txt += `<div><img src = "${LIST[index]}" alt = "" id ="${index}"></div>`;
+    txt += `<div><img src = "kepek/hatter.jpg" alt = "" id ="${index}"></div>`;
   }
   console.log(txt);
   return txt;
