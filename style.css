@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 main{
-    width: 80ű%;
+    width: 80%;
     margin: auto;
     padding: 0;
 }
@@ -19,3 +19,4 @@ div{
     padding: 5px;
     border-radius: 5px;
 }
+/*resp*/
