@@ -17,18 +17,16 @@ $(function () {
   /**kiskepekre kattintas */
   //fogd meg a kskepeket,adj hozza esemeny kezelot
   const FELSOKEPEK = $("#felso img");
-  FELSOKEPEK.on("click",kepreKattintas)
+  FELSOKEPEK.on("click", kepreKattintas);
 });
-function kepreKattintas() {
-   console.log(event.target)
-   
-
-  
+function kepreKattintas(event) {
+  const aktKep = event.target;
+  console.log(aktKep.id);
 }
 function osszeAllit() {
   let txt = "";
   for (let index = 0; index < LIST.length; index++) {
-    txt += `<div><img src = "${LIST[index]}" alt = ""></div>`;
+    txt += `<div><img src = "${LIST[index]}" alt = "" id ="${index}"></div>`;
   }
   console.log(txt);
   return txt;
