@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    width: 80ű%;
+    margin: auto;
+    padding: 0;
+}
+img{
+    width: 100%;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+div{
+    border: 1px blue solid;
+    padding: 5px;
+    border-radius: 5px;
+}
