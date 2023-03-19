@@ -16,7 +16,7 @@ const LIST = [
   "kepek/kep6.jpg",
 ];
 let db = 0;
-const KIVALASZTOTTKEPEK = []
+const KIVALASZTOTTKEPEK = [];
 $(function () {
   /**console.log("barmi") Selection.append('')*/
   const FELSOELEM = $("#felso");
@@ -38,7 +38,6 @@ function kepreKattintas(event) {
   if (db == 2) {
     db = 0;
     visszaFordit();
-    
   }
 }
 function osszeAllit() {
@@ -63,6 +62,12 @@ function visszaFordit() {
     KIVALASZTOTTKEPEK.pop();
   }, 1000);
 }
-function osszeKever(){
-    /**osszekevrnmi a listat */
+function osszeKever() {
+  FELSOKEPEK.sort(function(){return 0.5 - Math.random()});
+  return FELSOKEPEK;
+}
+function ketAzonos(){
+  if ($(aktualisKep).attr("src") == $(aktualisKep).attr("src") ) {
+    $(aktualisKep).hide();
+  }
 }
