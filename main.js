@@ -85,4 +85,7 @@ function listaKever(array){
 }
 function ugyanOlyan(id){
   var img = document.getElementById(id)
+  if (img(id) == img(id)) {
+    //img.hidden()
+  }
 }
