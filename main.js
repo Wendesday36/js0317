@@ -83,4 +83,6 @@ function osszeAllit() {
 function listaKever(array){
   array.sort(()=> Math.random()-0.5);
 }
-function
+function ugyanOlyan(){
+  
+}
