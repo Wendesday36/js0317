@@ -1,6 +1,11 @@
-/**window.addEventListener("load",function(){
-
-})*/
+/* window.addEventListener("load",function (){
+    //ide jön a kód
+})
+$(document).ready(function(){
+   
+  }); */
+//hozz létre egy listát a képekkel
+// kép elég!
 const LIST = [
   "kepek/kep1.jpg",
   "kepek/kep2.jpg",
@@ -15,59 +20,67 @@ const LIST = [
   "kepek/kep5.jpg",
   "kepek/kep6.jpg",
 ];
-let db = 0;
 const KIVALASZTOTTKEPEK = [];
+let db = 0;
 $(function () {
-  /**console.log("barmi") Selection.append('')*/
+  //ide jön a kód
+  /**1 .tedd ki a képeket a felső sectionbe
+   * minden kép külön div-be kerüljön
+   */
+  listaKever();
   const FELSOELEM = $("#felso");
   let tartalom = osszeAllit();
   FELSOELEM.append(tartalom);
-  /**kiskepekre kattintas */
-  //fogd meg a kskepeket,adj hozza esemeny kezelot
-  const FELSOKEPEK = $("#felso img");
 
+  /**kisképekre kattintás */
+  //fogd meg a kisképeket
+  const FELSOKEPEK = $("#felso img");
+  //add hozzá az eseménykezelőt ,
   FELSOKEPEK.on("click", kepreKattintas);
 });
-function kepreKattintas(event) {
-  const aktualisKep = event.target;
-  console.log(aktualisKep.id);
-  console.log($(aktualisKep).attr("id"));
-  aktualisKep.src = LIST[aktualisKep.id];
-  KIVALASZTOTTKEPEK.push($(aktualisKep).attr("id"));
+
+function kepreKattintas() {
+  const aktKep = event.target;
+  //irasd ki a konzolra az aktuális elem src attributumát!
+  console.log(aktKep.id);
+  console.log($(aktKep).attr("id"));
+  /**Írjuk ki, hogy hányadik képre kattintottunK?  */
+  /**kicseréljk a kép src */
+  aktKep.src = LIST[aktKep.id];
+  KIVALASZTOTTKEPEK.push($(aktKep).attr("id"));
   db++;
   if (db == 2) {
     db = 0;
-    visszaFordit();
+    visszafordit();
   }
 }
-function osszeAllit() {
-  let txt = "";
-  for (let index = 0; index < LIST.length; index++) {
-    txt += `<div><img src = "kepek/hatter.jpg" alt = "" id ="${index}"></div>`;
-  }
-  console.log(txt);
-  return txt;
-}
-function visszaFordit() {
+
+function visszafordit() {
+  //visszaállítjuk az src-t a háttérre, amelyikre kattintottunk
   console.log(KIVALASZTOTTKEPEK);
 
   setTimeout(function () {
     const FELSOKEPEK = $("#felso img");
-    let aktualisKep = FELSOKEPEK.eq(KIVALASZTOTTKEPEK[0]);
-    console.log(aktualisKep);
-    $(aktualisKep).attr("src", "kepek/hatter.jpg");
-    aktualisKep = FELSOKEPEK.eq(KIVALASZTOTTKEPEK[1]);
-    $(aktualisKep).attr("src", "kepek/hatter.jpg");
+    let aktkep = FELSOKEPEK.eq(KIVALASZTOTTKEPEK[0]);
+    console.log(aktkep);
+    $(aktkep).attr("src", "kepek/hatter.jpg");
+    aktkep = FELSOKEPEK.eq(KIVALASZTOTTKEPEK[1]);
+    $(aktkep).attr("src", "kepek/hatter.jpg");
     KIVALASZTOTTKEPEK.pop();
     KIVALASZTOTTKEPEK.pop();
   }, 1000);
 }
-function osszeKever() {
-  FELSOKEPEK.sort(function(){return 0.5 - Math.random()});
-  return FELSOKEPEK;
-}
-function ketAzonos(){
-  if ($(aktualisKep).attr("src") == $(aktualisKep).attr("src") ) {
-    $(aktualisKep).hide();
+
+function osszeAllit() {
+  //**összállítjuk a szöveget, ami megjeleníti a képket */
+  let txt = "";
+  for (let index = 0; index < LIST.length; index++) {
+    txt += `<div><img src="kepek/hatter.jpg" alt="" id="${index}"></div>`;
   }
+  console.log(txt);
+  return txt;
 }
+function listaKever(array){
+  array.sort(()=> Math.random()-0.5);
+}
+function
